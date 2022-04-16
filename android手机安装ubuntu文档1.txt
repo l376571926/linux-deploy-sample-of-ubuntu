@@ -1,0 +1,48 @@
+前提：
+手机得root，没root的不用往下看了，本教程不教root，我也是花钱去淘宝root的。
+
+1.去这里下载apk:
+https://github.com/meefik/linuxdeploy/releases
+文件名：linuxdeploy-2.6.0-259.apk
+
+或者直接用下面的链接下载：
+https://github.com/meefik/linuxdeploy/releases/download/2.6.0/linuxdeploy-2.6.0-259.apk
+
+2.安装完了打开Linux Deploy，点击<左上角>的“三”打开侧边菜单栏，点击配置文件，点击“+”，配置文件名称随便取，我这里用testx,然后选中它，返回主界面
+
+3.点击<右下角>的“三”，界面中的配置信息参考右边文件设置，附详细解析。
+
+4.配置完了点<左上角>返回主界面
+
+5.点击<右上角>竖着的三个点“...”，点击安装，弹出确认安装窗口，点击确定
+
+6.漫长的等待。。。（21:59->22：05)将近7分钟。
+
+7.知道出现<<<deploy则表示ubuntu系统安装成功了。
+
+8.点击左下角“启动”按钮，点击确定
+
+9.测试ssh连接ubuntu，输入yes，输入密码123456，出现$则表示连接上ubuntu的终端了。
+注：如果出现Host key verification failed.错误，打开C:\Users\<你电脑登录用户名>\.ssh\known_hosts，将启动根你现在安装系统同ip的那条删了就可以了。
+
+10.测试vnc连接ubuntu，用到的软件VNC Viewer，输入192.168.1.101，点击Continue，输入密码123456，勾选Remember password（下次就不用输入密码了），点击OK
+
+11.解决vnc连接后桌面乱码的问题
+在ssh中执行如下命令：
+sudo apt-get update
+sudo apt-get install fonts-wqy-zenhei
+安装完了后，在vnc中就可以看到<欢迎第一次启动面板>的文字而不是方块了，点击使用默认配置就可以了
+
+打开<主文件夹>发现文件夹图标缺失没有显示，如下解决：
+sudo apt-get update
+sudo apt-get install -y gnome-icon-theme-full tango-icon-theme
+安装完了后，拖动一下窗口也会刷新图标，关闭<主文件夹>窗口重新打开就可以看到所有的文件夹都正常了，有文件名也有图标。
+
+12.关闭ubuntu系统，点击主界面下面的停止就可以了，不用的时候记得关闭ubuntu系统，很耗电。
+
+
+教程涉及文件上传到了github，大家可以去那里下载：
+https://github.com/l376571926/linux-deploy-sample-of-ubuntu
+
+手机投屏软件scrcpy，地址：
+https://github.com/Genymobile/scrcpy/releases/download/v1.23/scrcpy-win64-v1.23.zip

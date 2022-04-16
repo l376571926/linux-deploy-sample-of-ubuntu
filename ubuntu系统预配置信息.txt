@@ -1,0 +1,56 @@
+1.发行版 GNU/Linux：
+Ubuntu
+
+2.架构：
+arm64
+注：电脑连接手机执行
+adb shell getprop ro.product.cpu.abi
+-->arm64-v8a
+
+3.发行版 GNU/Linux版本：
+xenial
+注：
+precise-->ubuntu12.04
+trusty-->ubuntu14.04
+xenial-->ubuntu16.04
+bionic-->ubuntu18.04
+
+4.源地址：
+清华源：http://mirrors.tuna.tsinghua.edu.cn/help/ubuntu-ports/
+or
+中科大源：http://mirrors.ustc.edu.cn/ubuntu-ports/
+注：两个源选择其中一个填进去。不用https的原因是ubuntu基系统缺少支持的组件会导致安装过程因网络原因失败。不用清华源的原因是之前用到一个软件在清华源中没有，所以还是推荐中科大源吧。
+
+5.用户密码：
+123456
+注：为了好记，随便设置也可以
+
+6.本地化：zh_CN.UTF-8
+注：默认C是安装英文系统，改zh_CN.UTF-8安装的就是简体中文系统，当然还有繁体中文zh_HK.UTF-8(香港)和zh-TW.UTF-8(台湾)
+系统安装过程有中文，如果没改本地化用的是C，那么安装过程将全程是英文。
+
+7.挂载
+启用✔
+允许挂载Android上的资源
+挂载目录1：
+Source:/mnt/ext_sdcard 
+Target:/android_resources/mnt/ext_sdcard
+挂载目录2：
+Source:/mnt/sdcard
+Target:/android_resources/mnt/sdcard
+注：
+/mnt/ext_sdcard-->tf卡根目录
+/mnt/sdcard-->手机存储根目录
+这里的挂载就相当于映射的意思，Source代表android上的路径，Target代表ubuntu上的路径，挂载目录1的意思就是把手机上的外置存储卡（TF卡）映射到ubuntu系统中，这样做的用途是文件共享。ubuntu的文件可以传到手机上，手机上的文件也可以传到ubuntu上去。这样做的原因是，linux deploy默认是不能访问手机目录的。
+
+8.ssh
+启用✔
+启用SSH服务器
+
+9.图形界面：
+启用✔
+允许使用图形环境
+
+图形子系统：VNC
+
+桌面环境：Xfce
